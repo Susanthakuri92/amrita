@@ -139,6 +139,7 @@
                         <input type="text" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn">Submit</button>
+                        <span id="msg"></span>
                     </form>
                 </div>
             </div>
@@ -148,30 +149,30 @@
 
     <script>
         var sidemenu = document.getElementById("sidemenu");
-var menuBtn = document.querySelector(".fas.fa-bars");
+        var menuBtn = document.querySelector(".fas.fa-bars");
 
-function openmenu() {
-  sidemenu.style.right = "0";
-}
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
 
-function closemenu() {
-  sidemenu.style.right = "-200px";
-}
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
 
-function handleClickOutside(event) {
-  if (!sidemenu.contains(event.target) && event.target !== menuBtn) {
-    closemenu();
-  }
-}
+        function handleClickOutside(event) {
+            if (!sidemenu.contains(event.target) && event.target !== menuBtn) {
+                closemenu();
+            }
+        }
 
-document.addEventListener("click", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
 
-window.addEventListener("scroll", function() {
-  if (sidemenu.style.right === "0px") {
-    closemenu();
-  }
-});
-   const images = document.querySelectorAll('.gallery img');
+        window.addEventListener("scroll", function () {
+            if (sidemenu.style.right === "0px") {
+                closemenu();
+            }
+        });
+        const images = document.querySelectorAll('.gallery img');
 
         images.forEach(image => {
             image.addEventListener('click', () => {
@@ -190,13 +191,27 @@ window.addEventListener("scroll", function() {
             }
         });
         document.addEventListener('scroll', event => {
-  const zoomed = document.querySelector('.zoom');
-  if (zoomed) {
-    zoomed.classList.remove('zoom');
-  }
-});
+            const zoomed = document.querySelector('.zoom');
+            if (zoomed) {
+                zoomed.classList.remove('zoom');
+            }
+        });
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-r0LRqecSWLpfQXgxUUgo0TyoSMk7jZKmuoGzzDcZq13voNplL_9Zc7wvZOJVerxu/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent Successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },2000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        });
     </script>
-
 </body>
 
 </html>

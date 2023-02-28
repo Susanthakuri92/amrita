@@ -210,7 +210,6 @@ nav ul li a:hover::after{
     border: 1px solid red;
     background-color: black;
   }
-  
   button:hover {
     background-color: #ff004f;
   }
@@ -230,31 +229,6 @@ nav .fas{
         font-size: 30px;
 
     }
-    /* nav .fas{
-        display: block;
-        font-size: 25px;
-    }
-    nav ul{
-        background-color: rgba(68, 68, 68, 0.9);        
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 144px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s, background-color 0.5s; 
-    }
-    nav ul li{
-        display: block;
-        margin: 25px;
-    }
-    nav ul .fas{
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }  */
     nav .logo {
         display: block;
         height: 100px;
