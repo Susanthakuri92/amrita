@@ -4,6 +4,9 @@
     /* font-family: 'Poppins', sans-serif; */
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: black;
     color: #fff;
@@ -58,7 +61,7 @@ nav ul li a:hover::after{
 
 }
 .header-text{
-    margin-top: 20%;
+    margin-top: 30%;
     font-size: 30px;
 }
 .header-text h1{
