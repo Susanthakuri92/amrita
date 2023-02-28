@@ -182,8 +182,55 @@ nav ul li a:hover::after{
     margin-right: 15px;
     color: white;
     display: inline-block;
+    transition: transform(0.5s);
 }
 .social-icons a:hover{
     color: #ff004f;
-    transform: 0.5s;
+    transform: translateY(-5px);
+}
+.contact-right form{
+    width: 100%;
+}
+ form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+ }
+ button{
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: black;
+  }
+  
+  button:hover {
+    background-color: #ff004f;
+  }
+/* ------------Css for small Screen--------------- */
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(image/33.png);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+        
+    }
 }
