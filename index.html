@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>My portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="header">
         <div class="container">
@@ -20,8 +22,8 @@
                 </ul>
             </nav>
             <div class="header-text">
-            <p>Engineering student and a Photography enthusiast</p>
-            <h1>Hi, I'm <span>Amrita</span> Maharjan.</h1>
+                <p>Engineering student and a Photography enthusiast</p>
+                <h1>Hi, I'm <span>Amrita</span> Maharjan.</h1>
             </div>
         </div>
     </div>
@@ -30,12 +32,14 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="image/2.jpg" >
+                    <img src="image/2.jpg">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About ME</h1>
-                    <p>Lorem ipsum dolcsor sit amet consectetur adipisicing elit. Dolorum enim illum quo vero iste mollitia debitis. Temporibus, autem modi excepturi quae voluptates exercitationem ab molestias provident sit necessitatibus. Itaque, natus!</p>
-                    
+                    <p>Lorem ipsum dolcsor sit amet consectetur adipisicing elit. Dolorum enim illum quo vero iste
+                        mollitia debitis. Temporibus, autem modi excepturi quae voluptates exercitationem ab molestias
+                        provident sit necessitatibus. Itaque, natus!</p>
+
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -73,49 +77,54 @@
             </div>
         </div>
     </div>
-<!-- -------------services------------- -->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">My Images</h1>
-        <div class="gallery">
-            <div><img src="Gallery/1.jpg"></div>
-            <div><img src="Gallery/2.jpg"></div>
-            <div><img src="Gallery/3.jpg"></div>
-            <div><img src="Gallery/4.jpg"></div>
-            <div><img src="Gallery/5.jpg"></div>
-            <div><img src="Gallery/6.jpg"></div>
+    <!-- -------------services------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Images</h1>
+            <div class="gallery">
+                <div><img src="Gallery/1.jpg"></div>
+                <div><img src="Gallery/2.jpg"></div>
+                <div><img src="Gallery/3.jpg"></div>
+                <div><img src="Gallery/4.jpg"></div>
+                <div><img src="Gallery/5.jpg"></div>
+                <div><img src="Gallery/6.jpg"></div>
+            </div>
         </div>
     </div>
-</div>
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-    
-    const images = document.querySelectorAll('.gallery img');
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
 
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
-            image.classList.add('zoom'); // add the 'zoom' class to the clicked image
-  });
-});
-document.addEventListener('click', event => {
-  if (!event.target.matches('.gallery img')) {
-    images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
-  }
-});
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        const images = document.querySelectorAll('.gallery img');
 
-</script>
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                if (image.classList.contains('zoom')) { // if image is already zoomed in, zoom out
+                    image.classList.remove('zoom');
+                } else { // if image is not zoomed in, zoom in and remove 'zoom' class from all other images
+                    images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
+                    image.classList.add('zoom'); // add the 'zoom' class to the clicked image
+                }
+            });
+        });
+
+        document.addEventListener('click', event => {
+            if (!event.target.matches('.gallery img')) {
+                images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
+            }
+        });
+
+    </script>
 </body>
+
 </html>
