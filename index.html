@@ -147,20 +147,31 @@
 
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+        var sidemenu = document.getElementById("sidemenu");
+var menuBtn = document.querySelector(".fas.fa-bars");
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-        const images = document.querySelectorAll('.gallery img');
+function openmenu() {
+  sidemenu.style.right = "0";
+}
+
+function closemenu() {
+  sidemenu.style.right = "-200px";
+}
+
+function handleClickOutside(event) {
+  if (!sidemenu.contains(event.target) && event.target !== menuBtn) {
+    closemenu();
+  }
+}
+
+document.addEventListener("click", handleClickOutside);
+
+window.addEventListener("scroll", function() {
+  if (sidemenu.style.right === "0px") {
+    closemenu();
+  }
+});
+   const images = document.querySelectorAll('.gallery img');
 
         images.forEach(image => {
             image.addEventListener('click', () => {
@@ -178,19 +189,12 @@
                 images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
             }
         });
-        
-        
-
-
-    </script>
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-        function openmenu(){
-            sidemenu.style.right = "0";
-        }
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-        }
+        document.addEventListener('scroll', event => {
+  const zoomed = document.querySelector('.zoom');
+  if (zoomed) {
+    zoomed.classList.remove('zoom');
+  }
+});
     </script>
 
 </body>
