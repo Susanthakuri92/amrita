@@ -7,20 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-8DYv09qhNIT+Uq3GqKjufg6vN/3/ZpH9X1qWgF/MoTpzpiHlKwQb+yEbe/f1AzuA0lL5WLMI9SjkaM5PzQ2BJg==" crossorigin="anonymous" />
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <body>
     <div id="header">
         <div class="container">
             <nav>
                 <img src="image/logo.png" height="100px" class="logo">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">My Images</li>
                     <li><a href="#">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Engineering student and a Photography enthusiast</p>
@@ -96,23 +99,27 @@
     <div id="contact">
         <div class="container">
             <div class="row">
-                    <div class="contact-left">
-                        <h1 class="sub-title">Contact Me</h1>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/amimhrzn.mhrzn"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/mhrzn_ami/"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.snapchat.com/add/amimaharjan"><i class="fa-brands fa-snapchat"></i></a>
-                            <a href="https://www.tiktok.com/@amimhrzn58"><i class="fa-brands fa-tiktok"></i></a>
-                        </div>
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/amimhrzn.mhrzn" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mhrzn_ami/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.snapchat.com/add/amimaharjan" target="_blank"><i
+                                class="fa-brands fa-snapchat"></i></a>
+                        <a href="https://www.tiktok.com/@amimhrzn58" target="_blank"><i
+                                class="fa-brands fa-tiktok"></i></a>
                     </div>
-                    <div class="contact-right">
-                        <form>
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="text" name="Email" placeholder="Your Email" required>
-                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                            <button type="submit" class="btn">Submit</button>
-                        </form>
-                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="text" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -151,6 +158,15 @@
             }
         });
 
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
     </script>
 </body>
 
