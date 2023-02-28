@@ -101,6 +101,21 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+    
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
+            image.classList.add('zoom'); // add the 'zoom' class to the clicked image
+  });
+});
+document.addEventListener('click', event => {
+  if (!event.target.matches('.gallery img')) {
+    images.forEach(img => img.classList.remove('zoom')); // remove the 'zoom' class from all images
+  }
+});
+
 </script>
 </body>
 </html>

@@ -144,16 +144,22 @@ nav ul li a:hover::after{
     margin-top: 50px;
 } */
 .gallery{
+    margin: 20px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
 .gallery img{
     max-width: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
-/* @media (max-width: 768px) {
+.gallery img.zoom{
+    transform: scale(1.5);
+    z-index: 1;
+}
+@media (max-width: 768px) {
     .gallery {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-  } */
+  }
