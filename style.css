@@ -144,7 +144,7 @@ nav ul li a:hover::after{
   .gallery {
     margin: 20px 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
     width: 100%;
   }
@@ -212,6 +212,34 @@ nav ul li a:hover::after{
   }
   button:hover {
     background-color: #ff004f;
+  }
+  .back-to-top {
+    width: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    background: #ff004f;
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50px;
+  }
+  
+  .back-to-top i {
+    font-size: 15px;
+    display: inline-block;
+    padding-top: 6px;
+    transition: all 0.3s ease;  
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+  }
+  
+  .back-to-top:hover {
+    background: black;  
+    border-color:  #ff004f;
   }
 /* ------------Css for small Screen--------------- */
 nav .fas{
