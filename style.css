@@ -327,3 +327,18 @@ nav .fas{
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1150px) {
+
+#header{
+        background-image: url(image/333.png);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 30px;
+    }
+    .header-text h1{
+        font-size: 40px;
+
+    }
+}
