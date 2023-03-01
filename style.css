@@ -267,6 +267,8 @@ nav .fas{
     nav .logo {
         display: block;
         height: 100px;
+        width: 125px;
+        margin-top: -20px;
       }
       
       nav .fas {
@@ -342,3 +344,4 @@ nav .fas{
 
     }
 }
+
