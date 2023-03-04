@@ -49,6 +49,10 @@ window.addEventListener('load', () => {
       document.documentElement.scrollTop = 0; 
     }
   });
+  const transitionTime = 0.43; // seconds
+  navbar.style.transition = `opacity ${transitionTime}s, visibility ${transitionTime}s`;
+  sidemenu.style.transition = `right ${transitionTime}s`;
+  backToTopButton.style.transition = `opacity ${transitionTime}s, visibility ${transitionTime}s, transition-delay ${transitionTime}s`;
 });
 
 // -----------------image---gallery----------
